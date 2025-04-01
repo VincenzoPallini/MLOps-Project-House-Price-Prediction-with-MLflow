@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/54787aa71f7648389a6ae57f612ca91e/artifacts
+deleted_time: 1743549878591
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 54787aa71f7648389a6ae57f612ca91e
+run_name: likeable-calf-921
+run_uuid: 54787aa71f7648389a6ae57f612ca91e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743546099736
+status: 1
+tags: []
+user_id: Epdragon

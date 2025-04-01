@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/379cfda228fb4237b9a9ca4aaec9182d/artifacts
+end_time: 1743545847592
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 379cfda228fb4237b9a9ca4aaec9182d
+run_name: likeable-tern-252
+run_uuid: 379cfda228fb4237b9a9ca4aaec9182d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743545840293
+status: 3
+tags: []
+user_id: Epdragon
