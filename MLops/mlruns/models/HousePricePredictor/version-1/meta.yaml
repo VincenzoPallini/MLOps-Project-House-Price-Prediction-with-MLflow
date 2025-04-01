@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1743548163993
+current_stage: None
+description: ''
+last_updated_timestamp: 1743548163993
+name: HousePricePredictor
+run_id: a9ffa0de70b94a8da9b186f10cba4bd4
+run_link: ''
+source: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/a9ffa0de70b94a8da9b186f10cba4bd4/artifacts/ridge-model-pipeline
+status: READY
+status_message: null
+storage_location: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/a9ffa0de70b94a8da9b186f10cba4bd4/artifacts/ridge-model-pipeline
+user_id: null
+version: 1
