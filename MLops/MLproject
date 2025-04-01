@@ -1,0 +1,17 @@
+# MLproject
+name: HousePricesPredictionMLOps 
+
+
+environment: conda.yaml
+
+
+entry_points:
+  main: 
+    parameters:
+      train_data: {type: str, default: "data/raw/train.csv"} 
+      alpha: {type: float, default: 1.0} 
+    command: >- 
+      python src/train.py
+        --train-data {train_data}
+        --test-data {test_data}
+        --alpha {alpha}

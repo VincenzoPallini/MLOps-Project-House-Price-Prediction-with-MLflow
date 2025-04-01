@@ -1,0 +1,15 @@
+# conda.yaml
+name: mlops-houseprices 
+channels:
+  - defaults
+  - conda-forge 
+dependencies:
+  - python=3.9 
+  - pip
+
+  - pip: 
+      - pandas
+      - numpy
+      - scikit-learn
+      - mlflow
+      - scipy
