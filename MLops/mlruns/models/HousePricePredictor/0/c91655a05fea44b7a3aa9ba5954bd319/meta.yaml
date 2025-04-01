@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/c91655a05fea44b7a3aa9ba5954bd319/artifacts
+deleted_time: 1743549864465
+end_time: 1743531485325
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: c91655a05fea44b7a3aa9ba5954bd319
+run_name: AutoLog_LR_C_0.5
+run_uuid: c91655a05fea44b7a3aa9ba5954bd319
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743531475780
+status: 3
+tags: []
+user_id: Epdragon
