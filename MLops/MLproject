@@ -1,9 +1,7 @@
 # MLproject
 name: HousePricesPredictionMLOps 
 
-
 environment: conda.yaml
-
 
 entry_points:
   main: 
