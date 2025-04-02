@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/9e166ef5a08349df8b792333a03a947d/artifacts
+end_time: 1743609925043
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9e166ef5a08349df8b792333a03a947d
+run_name: amusing-ram-331
+run_uuid: 9e166ef5a08349df8b792333a03a947d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743609917242
+status: 3
+tags: []
+user_id: Epdragon

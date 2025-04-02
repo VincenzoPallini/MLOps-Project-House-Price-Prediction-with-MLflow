@@ -1,0 +1,12 @@
+data:
+  raw_train_path: data/raw/train.csv
+  raw_test_path: data/raw/test.csv
+  processed_dir: data/processed
+model:
+  name: ridge
+  alpha: 1.0
+  scaler: robust
+project_name: MLOps-HousePrices
+random_state: 42
+validation_split_ratio: 0.2
+mlflow_experiment_name: House_Price_Training_Hydra

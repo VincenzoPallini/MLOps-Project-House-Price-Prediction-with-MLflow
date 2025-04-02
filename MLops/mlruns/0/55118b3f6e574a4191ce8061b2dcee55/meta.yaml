@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/55118b3f6e574a4191ce8061b2dcee55/artifacts
+end_time: 1743610429268
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 55118b3f6e574a4191ce8061b2dcee55
+run_name: amazing-skunk-468
+run_uuid: 55118b3f6e574a4191ce8061b2dcee55
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743610420907
+status: 3
+tags: []
+user_id: Epdragon

@@ -1,0 +1,5 @@
+# conf/data/default.yaml
+# Definisce i path relativi alla radice del progetto
+raw_train_path: data/raw/train.csv
+raw_test_path: data/raw/test.csv
+processed_dir: data/processed

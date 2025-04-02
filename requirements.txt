@@ -4,3 +4,6 @@ scikit-learn
 mlflow
 scipy
 dvc 
+pyarrow 
+hydra-core
+flatten-dict

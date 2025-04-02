@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/124201838811325135/5945af6483da4b54b6d9c087c2d28c81/artifacts
+end_time: 1743608293587
+entry_point_name: ''
+experiment_id: '124201838811325135'
+lifecycle_stage: active
+run_id: 5945af6483da4b54b6d9c087c2d28c81
+run_name: puzzled-crab-871
+run_uuid: 5945af6483da4b54b6d9c087c2d28c81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743608293475
+status: 3
+tags: []
+user_id: Epdragon
