@@ -1,0 +1,50 @@
+# .github/workflows/ci.yaml
+name: CI Pipeline - Linting # Nome del Workflow
+
+# Trigger: Esegui su push e pull request verso il branch main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint: # Nome del Job
+    runs-on: ubuntu-latest # Sistema operativo del runner GitHub
+
+    steps:
+      # Step 1: Scarica il codice del repository nel runner
+      - name: Check out repository code
+        uses: actions/checkout@v4 # Azione standard di GitHub
+
+      # Step 2: Imposta l'ambiente Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # Usa la stessa versione di conda.yaml
+
+      # Step 3: Installa le dipendenze (incluse quelle di sviluppo come flake8)
+      # Usiamo pip e requirements.txt qui per semplicità nel CI
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          # Assicurati che flake8 sia in requirements.txt
+          pip install flake8
+
+      # Step 4: Esegui il Linter (Flake8)
+      - name: Lint with Flake8
+        run: |
+          # Stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Exit-zero treats all errors as warnings. Max complexity (-1) disabled
+          flake8 . --count --exit-zero --max-complexity=-1 --max-line-length=127 --statistics
+
+      # --- Step 5 (Opzionale/Disabilitato): Esegui Pytest ---
+      # Nota: Questo step probabilmente fallirà perché non abbiamo i dati via DVC
+      # nel runner GitHub senza configurare uno storage remoto cloud per DVC.
+      # Lo lasciamo commentato o possiamo rimuoverlo/adattare i test.
+      # - name: Run Pytest (will likely skip data tests)
+      #   run: |
+      #     pip install pytest # Assicurati sia installato
+      #     pytest

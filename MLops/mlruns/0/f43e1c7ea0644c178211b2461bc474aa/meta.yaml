@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/f43e1c7ea0644c178211b2461bc474aa/artifacts
+end_time: 1743545822342
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f43e1c7ea0644c178211b2461bc474aa
+run_name: dazzling-perch-780
+run_uuid: f43e1c7ea0644c178211b2461bc474aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743545815369
+status: 3
+tags: []
+user_id: Epdragon

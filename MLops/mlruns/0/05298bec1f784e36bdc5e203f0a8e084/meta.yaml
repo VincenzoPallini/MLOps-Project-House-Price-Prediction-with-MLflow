@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/05298bec1f784e36bdc5e203f0a8e084/artifacts
+end_time: 1743597795131
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 05298bec1f784e36bdc5e203f0a8e084
+run_name: charming-elk-135
+run_uuid: 05298bec1f784e36bdc5e203f0a8e084
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743597794884
+status: 3
+tags: []
+user_id: root

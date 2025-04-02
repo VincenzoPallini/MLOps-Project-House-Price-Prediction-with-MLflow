@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/4d571dc032204aaa827f21f7e548aa17/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d571dc032204aaa827f21f7e548aa17
+run_name: clean-flea-572
+run_uuid: 4d571dc032204aaa827f21f7e548aa17
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743597498989
+status: 1
+tags: []
+user_id: root
