@@ -1,10 +1,8 @@
-# Enhanced MLOps Project: House Price Prediction
+# MLOps Project: House Price Prediction
 
 ## Project Overview
 
-This project demonstrates an advanced application of MLOps (Machine Learning Operations) principles to predict house prices using the Kaggle House Prices dataset. Building upon a foundational ML workflow, this project incorporates **a comprehensive suite of MLOps tools and practices** to establish a robust, reproducible, configurable, orchestrated, and version-controlled machine learning system.
-
-The focus has shifted from just building a model to **engineering a complete MLOps pipeline**, showcasing skills in data versioning, containerization, CI/CD fundamentals, configuration management, pipeline orchestration, experiment tracking, and model lifecycle management. This repository serves as a practical example of modern ML system design.
+This project demonstrates an advanced application of MLOps principles to predict house prices using the Kaggle House Prices dataset.
 
 **Dataset:** [House Prices - Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques) from Kaggle.
 
