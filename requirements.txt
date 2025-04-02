@@ -7,6 +7,6 @@ dvc
 pyarrow 
 hydra-core
 flatten-dict
-prefect o
+prefect 
 pytest
 flake8 
