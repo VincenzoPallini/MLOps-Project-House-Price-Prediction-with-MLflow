@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates an advanced application of MLOps principles to predict house prices using the Kaggle House Prices dataset.
+This project demonstrates an application of MLOps principles to predict house prices using the Kaggle House Prices dataset.
 
 **Dataset:** [House Prices - Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques) from Kaggle.
 
