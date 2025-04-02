@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/d75ffa2172c1419d8a67a85533153fda/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d75ffa2172c1419d8a67a85533153fda
+run_name: bouncy-shoat-173
+run_uuid: d75ffa2172c1419d8a67a85533153fda
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743611388337
+status: 1
+tags: []
+user_id: Epdragon

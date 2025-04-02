@@ -1,13 +1,11 @@
 # conf/config.yaml
-# Impostazioni di default e parametri generali
-
 defaults:
-  - data: default    # Carica di default la configurazione da data/default.yaml
-  - model: ridge     # Carica di default la configurazione da model/ridge.yaml
-  # Possiamo aggiungere override command-line per cambiare model (es. model=lasso)
-  - _self_          # Permette di definire valori in questo file stesso
+  - data: default
+  - model: ridge
+  - _self_
 
 project_name: "MLOps-HousePrices"
 random_state: 42
 validation_split_ratio: 0.2
-mlflow_experiment_name: "House_Price_Training_Hydra" # Nuovo nome esperimento
+mlflow_experiment_name: "House_Price_Training_Hydra"
+model_registry_name: "HousePricePredictor" 

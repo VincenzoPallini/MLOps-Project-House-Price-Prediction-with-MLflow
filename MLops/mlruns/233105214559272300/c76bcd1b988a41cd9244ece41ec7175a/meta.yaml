@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/c76bcd1b988a41cd9244ece41ec7175a/artifacts
+end_time: 1743617716463
+entry_point_name: ''
+experiment_id: '233105214559272300'
+lifecycle_stage: active
+run_id: c76bcd1b988a41cd9244ece41ec7175a
+run_name: capricious-moth-15
+run_uuid: c76bcd1b988a41cd9244ece41ec7175a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743617716397
+status: 4
+tags: []
+user_id: Epdragon

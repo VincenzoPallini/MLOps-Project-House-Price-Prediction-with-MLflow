@@ -1,10 +1,8 @@
-# tests/test_preprocess.py
 import pytest
 import pandas as pd
 import os
 
-# Assumi che pytest venga eseguito dalla radice del progetto
-# Altrimenti, potresti dover aggiustare l'import o il sys.path
+
 try:
     from src.preprocess import preprocess_data
 except ImportError:
@@ -13,14 +11,10 @@ except ImportError:
     from src.preprocess import preprocess_data
 
 
-# Definisci percorsi relativi alla radice del progetto
-# Questi test ASSUMONO che i dati siano presenti (via dvc pull)
-# Potrebbero fallire in un ambiente CI pulito senza dvc pull
+
 TRAIN_PATH = "data/raw/train.csv"
 TEST_PATH = "data/raw/test.csv"
 
-# Verifica se i file di dati esistono prima di eseguire i test che li usano
-# Pytest eseguirà questo check prima di collezionare i test nella classe
 @pytest.mark.skipif(not (os.path.exists(TRAIN_PATH) and os.path.exists(TEST_PATH)),
                     reason="Data files not found (run 'dvc pull'?)")
 class TestPreprocessDataWithData:
@@ -39,15 +33,11 @@ class TestPreprocessDataWithData:
         """ Test the output shapes (adjust numbers based on previous runs) """
         X_train, X_test, y_train = preprocess_data(TRAIN_PATH, TEST_PATH)
 
-        # Verifica consistenza righe (train può variare leggermente per outlier)
         assert abs(X_train.shape[0] - len(y_train)) == 0
-        assert abs(X_train.shape[0] - 1458) <= 5 # Num righe train atteso (circa)
-        assert X_test.shape[0] == 1459          # Num righe test fisso
+        assert abs(X_train.shape[0] - 1458) <= 5 
+        assert X_test.shape[0] == 1459          
 
-        # Verifica consistenza colonne
         assert X_train.shape[1] == X_test.shape[1]
-        # Verifica che il numero di colonne sia quello atteso dopo OHE
-        # Sostituisci 322 con il numero effettivo osservato nel tuo output precedente
         expected_cols = 322
         assert X_train.shape[1] == expected_cols
 
@@ -57,6 +47,3 @@ class TestPreprocessDataWithData:
         assert X_train.isnull().sum().sum() == 0
         assert X_test.isnull().sum().sum() == 0
         assert y_train.isnull().sum() == 0
-
-# Aggiungi qui altri test che NON richiedono i dati reali, se possibile
-# Esempio: Testare una funzione helper isolata se ne avessi una in preprocess.py

@@ -1,19 +1,20 @@
-# conda.yaml
-name: mlops-houseprices 
+name: mlops-houseprices
 channels:
   - defaults
-  - conda-forge 
+  - conda-forge
 dependencies:
-  - python=3.9 
+  - python=3.9
   - pip
 
-  - pip: 
+  - pip:
       - pandas
       - numpy
       - scikit-learn
       - mlflow
       - scipy
-      - dvc
       - pyarrow 
       - hydra-core
-      - flatten-dict
+      - flatten-dict 
+      - prefect 
+      - pytest 
+      - flake8 

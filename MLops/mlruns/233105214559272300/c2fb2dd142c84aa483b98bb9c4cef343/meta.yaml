@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/c2fb2dd142c84aa483b98bb9c4cef343/artifacts
+end_time: 1743617738007
+entry_point_name: ''
+experiment_id: '233105214559272300'
+lifecycle_stage: active
+run_id: c2fb2dd142c84aa483b98bb9c4cef343
+run_name: abundant-dove-35
+run_uuid: c2fb2dd142c84aa483b98bb9c4cef343
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743617737954
+status: 4
+tags: []
+user_id: Epdragon

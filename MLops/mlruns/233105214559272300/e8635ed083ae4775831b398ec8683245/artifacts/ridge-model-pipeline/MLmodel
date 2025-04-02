@@ -1,0 +1,286 @@
+artifact_path: ridge-model-pipeline
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.2
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.21.2
+model_size_bytes: 66469
+model_uuid: 09e31badaab64722a8f95d44f1bbf538
+prompts: null
+run_id: e8635ed083ae4775831b398ec8683245
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "LotFrontage", "required": true}, {"type":
+    "double", "name": "LotArea", "required": true}, {"type": "long", "name": "OverallQual",
+    "required": true}, {"type": "long", "name": "OverallCond", "required": true},
+    {"type": "long", "name": "YearBuilt", "required": true}, {"type": "long", "name":
+    "YearRemodAdd", "required": true}, {"type": "double", "name": "MasVnrArea", "required":
+    true}, {"type": "double", "name": "BsmtFinSF1", "required": true}, {"type": "double",
+    "name": "BsmtFinSF2", "required": true}, {"type": "double", "name": "BsmtUnfSF",
+    "required": true}, {"type": "double", "name": "TotalBsmtSF", "required": true},
+    {"type": "double", "name": "1stFlrSF", "required": true}, {"type": "double", "name":
+    "2ndFlrSF", "required": true}, {"type": "double", "name": "LowQualFinSF", "required":
+    true}, {"type": "double", "name": "GrLivArea", "required": true}, {"type": "double",
+    "name": "BsmtFullBath", "required": true}, {"type": "double", "name": "BsmtHalfBath",
+    "required": true}, {"type": "long", "name": "FullBath", "required": true}, {"type":
+    "long", "name": "HalfBath", "required": true}, {"type": "long", "name": "BedroomAbvGr",
+    "required": true}, {"type": "double", "name": "KitchenAbvGr", "required": true},
+    {"type": "long", "name": "TotRmsAbvGrd", "required": true}, {"type": "long", "name":
+    "Fireplaces", "required": true}, {"type": "double", "name": "GarageYrBlt", "required":
+    true}, {"type": "double", "name": "GarageCars", "required": true}, {"type": "double",
+    "name": "GarageArea", "required": true}, {"type": "double", "name": "WoodDeckSF",
+    "required": true}, {"type": "double", "name": "OpenPorchSF", "required": true},
+    {"type": "double", "name": "EnclosedPorch", "required": true}, {"type": "double",
+    "name": "3SsnPorch", "required": true}, {"type": "double", "name": "ScreenPorch",
+    "required": true}, {"type": "double", "name": "PoolArea", "required": true}, {"type":
+    "double", "name": "MiscVal", "required": true}, {"type": "long", "name": "MoSold",
+    "required": true}, {"type": "long", "name": "YrSold", "required": true}, {"type":
+    "double", "name": "TotalSF", "required": true}, {"type": "long", "name": "HouseAge",
+    "required": true}, {"type": "long", "name": "RemodAge", "required": true}, {"type":
+    "long", "name": "IsRemodeled", "required": true}, {"type": "double", "name": "TotalBath",
+    "required": true}, {"type": "double", "name": "TotalPorchSF", "required": true},
+    {"type": "boolean", "name": "MSSubClass_3.044522437723423", "required": true},
+    {"type": "boolean", "name": "MSSubClass_3.4339872044851463", "required": true},
+    {"type": "boolean", "name": "MSSubClass_3.713572066704308", "required": true},
+    {"type": "boolean", "name": "MSSubClass_3.828641396489095", "required": true},
+    {"type": "boolean", "name": "MSSubClass_3.9318256327243257", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.110873864173311", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.2626798770413155", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.330733340286331", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.394449154672439", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.454347296253507", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.51085950651685", "required": true},
+    {"type": "boolean", "name": "MSSubClass_4.795790545596741", "required": true},
+    {"type": "boolean", "name": "MSSubClass_5.017279836814924", "required": true},
+    {"type": "boolean", "name": "MSSubClass_5.081404364984463", "required": true},
+    {"type": "boolean", "name": "MSSubClass_5.198497031265826", "required": true},
+    {"type": "boolean", "name": "MSSubClass_5.25227342804663", "required": true},
+    {"type": "boolean", "name": "MSZoning_C (all)", "required": true}, {"type": "boolean",
+    "name": "MSZoning_FV", "required": true}, {"type": "boolean", "name": "MSZoning_RH",
+    "required": true}, {"type": "boolean", "name": "MSZoning_RL", "required": true},
+    {"type": "boolean", "name": "MSZoning_RM", "required": true}, {"type": "boolean",
+    "name": "Street_Grvl", "required": true}, {"type": "boolean", "name": "Street_Pave",
+    "required": true}, {"type": "boolean", "name": "Alley_Grvl", "required": true},
+    {"type": "boolean", "name": "Alley_None", "required": true}, {"type": "boolean",
+    "name": "Alley_Pave", "required": true}, {"type": "boolean", "name": "LotShape_IR1",
+    "required": true}, {"type": "boolean", "name": "LotShape_IR2", "required": true},
+    {"type": "boolean", "name": "LotShape_IR3", "required": true}, {"type": "boolean",
+    "name": "LotShape_Reg", "required": true}, {"type": "boolean", "name": "LandContour_Bnk",
+    "required": true}, {"type": "boolean", "name": "LandContour_HLS", "required":
+    true}, {"type": "boolean", "name": "LandContour_Low", "required": true}, {"type":
+    "boolean", "name": "LandContour_Lvl", "required": true}, {"type": "boolean", "name":
+    "Utilities_AllPub", "required": true}, {"type": "boolean", "name": "Utilities_NoSeWa",
+    "required": true}, {"type": "boolean", "name": "LotConfig_Corner", "required":
+    true}, {"type": "boolean", "name": "LotConfig_CulDSac", "required": true}, {"type":
+    "boolean", "name": "LotConfig_FR2", "required": true}, {"type": "boolean", "name":
+    "LotConfig_FR3", "required": true}, {"type": "boolean", "name": "LotConfig_Inside",
+    "required": true}, {"type": "boolean", "name": "LandSlope_Gtl", "required": true},
+    {"type": "boolean", "name": "LandSlope_Mod", "required": true}, {"type": "boolean",
+    "name": "LandSlope_Sev", "required": true}, {"type": "boolean", "name": "Neighborhood_Blmngtn",
+    "required": true}, {"type": "boolean", "name": "Neighborhood_Blueste", "required":
+    true}, {"type": "boolean", "name": "Neighborhood_BrDale", "required": true}, {"type":
+    "boolean", "name": "Neighborhood_BrkSide", "required": true}, {"type": "boolean",
+    "name": "Neighborhood_ClearCr", "required": true}, {"type": "boolean", "name":
+    "Neighborhood_CollgCr", "required": true}, {"type": "boolean", "name": "Neighborhood_Crawfor",
+    "required": true}, {"type": "boolean", "name": "Neighborhood_Edwards", "required":
+    true}, {"type": "boolean", "name": "Neighborhood_Gilbert", "required": true},
+    {"type": "boolean", "name": "Neighborhood_IDOTRR", "required": true}, {"type":
+    "boolean", "name": "Neighborhood_MeadowV", "required": true}, {"type": "boolean",
+    "name": "Neighborhood_Mitchel", "required": true}, {"type": "boolean", "name":
+    "Neighborhood_NAmes", "required": true}, {"type": "boolean", "name": "Neighborhood_NPkVill",
+    "required": true}, {"type": "boolean", "name": "Neighborhood_NWAmes", "required":
+    true}, {"type": "boolean", "name": "Neighborhood_NoRidge", "required": true},
+    {"type": "boolean", "name": "Neighborhood_NridgHt", "required": true}, {"type":
+    "boolean", "name": "Neighborhood_OldTown", "required": true}, {"type": "boolean",
+    "name": "Neighborhood_SWISU", "required": true}, {"type": "boolean", "name": "Neighborhood_Sawyer",
+    "required": true}, {"type": "boolean", "name": "Neighborhood_SawyerW", "required":
+    true}, {"type": "boolean", "name": "Neighborhood_Somerst", "required": true},
+    {"type": "boolean", "name": "Neighborhood_StoneBr", "required": true}, {"type":
+    "boolean", "name": "Neighborhood_Timber", "required": true}, {"type": "boolean",
+    "name": "Neighborhood_Veenker", "required": true}, {"type": "boolean", "name":
+    "Condition1_Artery", "required": true}, {"type": "boolean", "name": "Condition1_Feedr",
+    "required": true}, {"type": "boolean", "name": "Condition1_Norm", "required":
+    true}, {"type": "boolean", "name": "Condition1_PosA", "required": true}, {"type":
+    "boolean", "name": "Condition1_PosN", "required": true}, {"type": "boolean", "name":
+    "Condition1_RRAe", "required": true}, {"type": "boolean", "name": "Condition1_RRAn",
+    "required": true}, {"type": "boolean", "name": "Condition1_RRNe", "required":
+    true}, {"type": "boolean", "name": "Condition1_RRNn", "required": true}, {"type":
+    "boolean", "name": "Condition2_Artery", "required": true}, {"type": "boolean",
+    "name": "Condition2_Feedr", "required": true}, {"type": "boolean", "name": "Condition2_Norm",
+    "required": true}, {"type": "boolean", "name": "Condition2_PosA", "required":
+    true}, {"type": "boolean", "name": "Condition2_PosN", "required": true}, {"type":
+    "boolean", "name": "Condition2_RRAe", "required": true}, {"type": "boolean", "name":
+    "Condition2_RRAn", "required": true}, {"type": "boolean", "name": "Condition2_RRNn",
+    "required": true}, {"type": "boolean", "name": "BldgType_1Fam", "required": true},
+    {"type": "boolean", "name": "BldgType_2fmCon", "required": true}, {"type": "boolean",
+    "name": "BldgType_Duplex", "required": true}, {"type": "boolean", "name": "BldgType_Twnhs",
+    "required": true}, {"type": "boolean", "name": "BldgType_TwnhsE", "required":
+    true}, {"type": "boolean", "name": "HouseStyle_1.5Fin", "required": true}, {"type":
+    "boolean", "name": "HouseStyle_1.5Unf", "required": true}, {"type": "boolean",
+    "name": "HouseStyle_1Story", "required": true}, {"type": "boolean", "name": "HouseStyle_2.5Fin",
+    "required": true}, {"type": "boolean", "name": "HouseStyle_2.5Unf", "required":
+    true}, {"type": "boolean", "name": "HouseStyle_2Story", "required": true}, {"type":
+    "boolean", "name": "HouseStyle_SFoyer", "required": true}, {"type": "boolean",
+    "name": "HouseStyle_SLvl", "required": true}, {"type": "boolean", "name": "RoofStyle_Flat",
+    "required": true}, {"type": "boolean", "name": "RoofStyle_Gable", "required":
+    true}, {"type": "boolean", "name": "RoofStyle_Gambrel", "required": true}, {"type":
+    "boolean", "name": "RoofStyle_Hip", "required": true}, {"type": "boolean", "name":
+    "RoofStyle_Mansard", "required": true}, {"type": "boolean", "name": "RoofStyle_Shed",
+    "required": true}, {"type": "boolean", "name": "RoofMatl_CompShg", "required":
+    true}, {"type": "boolean", "name": "RoofMatl_Membran", "required": true}, {"type":
+    "boolean", "name": "RoofMatl_Metal", "required": true}, {"type": "boolean", "name":
+    "RoofMatl_Roll", "required": true}, {"type": "boolean", "name": "RoofMatl_Tar&Grv",
+    "required": true}, {"type": "boolean", "name": "RoofMatl_WdShake", "required":
+    true}, {"type": "boolean", "name": "RoofMatl_WdShngl", "required": true}, {"type":
+    "boolean", "name": "Exterior1st_AsbShng", "required": true}, {"type": "boolean",
+    "name": "Exterior1st_AsphShn", "required": true}, {"type": "boolean", "name":
+    "Exterior1st_BrkComm", "required": true}, {"type": "boolean", "name": "Exterior1st_BrkFace",
+    "required": true}, {"type": "boolean", "name": "Exterior1st_CBlock", "required":
+    true}, {"type": "boolean", "name": "Exterior1st_CemntBd", "required": true}, {"type":
+    "boolean", "name": "Exterior1st_HdBoard", "required": true}, {"type": "boolean",
+    "name": "Exterior1st_ImStucc", "required": true}, {"type": "boolean", "name":
+    "Exterior1st_MetalSd", "required": true}, {"type": "boolean", "name": "Exterior1st_Plywood",
+    "required": true}, {"type": "boolean", "name": "Exterior1st_Stone", "required":
+    true}, {"type": "boolean", "name": "Exterior1st_Stucco", "required": true}, {"type":
+    "boolean", "name": "Exterior1st_VinylSd", "required": true}, {"type": "boolean",
+    "name": "Exterior1st_Wd Sdng", "required": true}, {"type": "boolean", "name":
+    "Exterior1st_WdShing", "required": true}, {"type": "boolean", "name": "Exterior2nd_AsbShng",
+    "required": true}, {"type": "boolean", "name": "Exterior2nd_AsphShn", "required":
+    true}, {"type": "boolean", "name": "Exterior2nd_Brk Cmn", "required": true}, {"type":
+    "boolean", "name": "Exterior2nd_BrkFace", "required": true}, {"type": "boolean",
+    "name": "Exterior2nd_CBlock", "required": true}, {"type": "boolean", "name": "Exterior2nd_CmentBd",
+    "required": true}, {"type": "boolean", "name": "Exterior2nd_HdBoard", "required":
+    true}, {"type": "boolean", "name": "Exterior2nd_ImStucc", "required": true}, {"type":
+    "boolean", "name": "Exterior2nd_MetalSd", "required": true}, {"type": "boolean",
+    "name": "Exterior2nd_Other", "required": true}, {"type": "boolean", "name": "Exterior2nd_Plywood",
+    "required": true}, {"type": "boolean", "name": "Exterior2nd_Stone", "required":
+    true}, {"type": "boolean", "name": "Exterior2nd_Stucco", "required": true}, {"type":
+    "boolean", "name": "Exterior2nd_VinylSd", "required": true}, {"type": "boolean",
+    "name": "Exterior2nd_Wd Sdng", "required": true}, {"type": "boolean", "name":
+    "Exterior2nd_Wd Shng", "required": true}, {"type": "boolean", "name": "MasVnrType_BrkCmn",
+    "required": true}, {"type": "boolean", "name": "MasVnrType_BrkFace", "required":
+    true}, {"type": "boolean", "name": "MasVnrType_None", "required": true}, {"type":
+    "boolean", "name": "MasVnrType_Stone", "required": true}, {"type": "boolean",
+    "name": "ExterQual_Ex", "required": true}, {"type": "boolean", "name": "ExterQual_Fa",
+    "required": true}, {"type": "boolean", "name": "ExterQual_Gd", "required": true},
+    {"type": "boolean", "name": "ExterQual_TA", "required": true}, {"type": "boolean",
+    "name": "ExterCond_Ex", "required": true}, {"type": "boolean", "name": "ExterCond_Fa",
+    "required": true}, {"type": "boolean", "name": "ExterCond_Gd", "required": true},
+    {"type": "boolean", "name": "ExterCond_Po", "required": true}, {"type": "boolean",
+    "name": "ExterCond_TA", "required": true}, {"type": "boolean", "name": "Foundation_BrkTil",
+    "required": true}, {"type": "boolean", "name": "Foundation_CBlock", "required":
+    true}, {"type": "boolean", "name": "Foundation_PConc", "required": true}, {"type":
+    "boolean", "name": "Foundation_Slab", "required": true}, {"type": "boolean", "name":
+    "Foundation_Stone", "required": true}, {"type": "boolean", "name": "Foundation_Wood",
+    "required": true}, {"type": "boolean", "name": "BsmtQual_Ex", "required": true},
+    {"type": "boolean", "name": "BsmtQual_Fa", "required": true}, {"type": "boolean",
+    "name": "BsmtQual_Gd", "required": true}, {"type": "boolean", "name": "BsmtQual_None",
+    "required": true}, {"type": "boolean", "name": "BsmtQual_TA", "required": true},
+    {"type": "boolean", "name": "BsmtCond_Fa", "required": true}, {"type": "boolean",
+    "name": "BsmtCond_Gd", "required": true}, {"type": "boolean", "name": "BsmtCond_None",
+    "required": true}, {"type": "boolean", "name": "BsmtCond_Po", "required": true},
+    {"type": "boolean", "name": "BsmtCond_TA", "required": true}, {"type": "boolean",
+    "name": "BsmtExposure_Av", "required": true}, {"type": "boolean", "name": "BsmtExposure_Gd",
+    "required": true}, {"type": "boolean", "name": "BsmtExposure_Mn", "required":
+    true}, {"type": "boolean", "name": "BsmtExposure_No", "required": true}, {"type":
+    "boolean", "name": "BsmtExposure_None", "required": true}, {"type": "boolean",
+    "name": "BsmtFinType1_ALQ", "required": true}, {"type": "boolean", "name": "BsmtFinType1_BLQ",
+    "required": true}, {"type": "boolean", "name": "BsmtFinType1_GLQ", "required":
+    true}, {"type": "boolean", "name": "BsmtFinType1_LwQ", "required": true}, {"type":
+    "boolean", "name": "BsmtFinType1_None", "required": true}, {"type": "boolean",
+    "name": "BsmtFinType1_Rec", "required": true}, {"type": "boolean", "name": "BsmtFinType1_Unf",
+    "required": true}, {"type": "boolean", "name": "BsmtFinType2_ALQ", "required":
+    true}, {"type": "boolean", "name": "BsmtFinType2_BLQ", "required": true}, {"type":
+    "boolean", "name": "BsmtFinType2_GLQ", "required": true}, {"type": "boolean",
+    "name": "BsmtFinType2_LwQ", "required": true}, {"type": "boolean", "name": "BsmtFinType2_None",
+    "required": true}, {"type": "boolean", "name": "BsmtFinType2_Rec", "required":
+    true}, {"type": "boolean", "name": "BsmtFinType2_Unf", "required": true}, {"type":
+    "boolean", "name": "Heating_Floor", "required": true}, {"type": "boolean", "name":
+    "Heating_GasA", "required": true}, {"type": "boolean", "name": "Heating_GasW",
+    "required": true}, {"type": "boolean", "name": "Heating_Grav", "required": true},
+    {"type": "boolean", "name": "Heating_OthW", "required": true}, {"type": "boolean",
+    "name": "Heating_Wall", "required": true}, {"type": "boolean", "name": "HeatingQC_Ex",
+    "required": true}, {"type": "boolean", "name": "HeatingQC_Fa", "required": true},
+    {"type": "boolean", "name": "HeatingQC_Gd", "required": true}, {"type": "boolean",
+    "name": "HeatingQC_Po", "required": true}, {"type": "boolean", "name": "HeatingQC_TA",
+    "required": true}, {"type": "boolean", "name": "CentralAir_N", "required": true},
+    {"type": "boolean", "name": "CentralAir_Y", "required": true}, {"type": "boolean",
+    "name": "Electrical_FuseA", "required": true}, {"type": "boolean", "name": "Electrical_FuseF",
+    "required": true}, {"type": "boolean", "name": "Electrical_FuseP", "required":
+    true}, {"type": "boolean", "name": "Electrical_Mix", "required": true}, {"type":
+    "boolean", "name": "Electrical_SBrkr", "required": true}, {"type": "boolean",
+    "name": "KitchenQual_Ex", "required": true}, {"type": "boolean", "name": "KitchenQual_Fa",
+    "required": true}, {"type": "boolean", "name": "KitchenQual_Gd", "required": true},
+    {"type": "boolean", "name": "KitchenQual_TA", "required": true}, {"type": "boolean",
+    "name": "Functional_Maj1", "required": true}, {"type": "boolean", "name": "Functional_Maj2",
+    "required": true}, {"type": "boolean", "name": "Functional_Min1", "required":
+    true}, {"type": "boolean", "name": "Functional_Min2", "required": true}, {"type":
+    "boolean", "name": "Functional_Mod", "required": true}, {"type": "boolean", "name":
+    "Functional_Sev", "required": true}, {"type": "boolean", "name": "Functional_Typ",
+    "required": true}, {"type": "boolean", "name": "FireplaceQu_Ex", "required": true},
+    {"type": "boolean", "name": "FireplaceQu_Fa", "required": true}, {"type": "boolean",
+    "name": "FireplaceQu_Gd", "required": true}, {"type": "boolean", "name": "FireplaceQu_None",
+    "required": true}, {"type": "boolean", "name": "FireplaceQu_Po", "required": true},
+    {"type": "boolean", "name": "FireplaceQu_TA", "required": true}, {"type": "boolean",
+    "name": "GarageType_2Types", "required": true}, {"type": "boolean", "name": "GarageType_Attchd",
+    "required": true}, {"type": "boolean", "name": "GarageType_Basment", "required":
+    true}, {"type": "boolean", "name": "GarageType_BuiltIn", "required": true}, {"type":
+    "boolean", "name": "GarageType_CarPort", "required": true}, {"type": "boolean",
+    "name": "GarageType_Detchd", "required": true}, {"type": "boolean", "name": "GarageType_None",
+    "required": true}, {"type": "boolean", "name": "GarageFinish_Fin", "required":
+    true}, {"type": "boolean", "name": "GarageFinish_None", "required": true}, {"type":
+    "boolean", "name": "GarageFinish_RFn", "required": true}, {"type": "boolean",
+    "name": "GarageFinish_Unf", "required": true}, {"type": "boolean", "name": "GarageQual_Ex",
+    "required": true}, {"type": "boolean", "name": "GarageQual_Fa", "required": true},
+    {"type": "boolean", "name": "GarageQual_Gd", "required": true}, {"type": "boolean",
+    "name": "GarageQual_None", "required": true}, {"type": "boolean", "name": "GarageQual_Po",
+    "required": true}, {"type": "boolean", "name": "GarageQual_TA", "required": true},
+    {"type": "boolean", "name": "GarageCond_Ex", "required": true}, {"type": "boolean",
+    "name": "GarageCond_Fa", "required": true}, {"type": "boolean", "name": "GarageCond_Gd",
+    "required": true}, {"type": "boolean", "name": "GarageCond_None", "required":
+    true}, {"type": "boolean", "name": "GarageCond_Po", "required": true}, {"type":
+    "boolean", "name": "GarageCond_TA", "required": true}, {"type": "boolean", "name":
+    "PavedDrive_N", "required": true}, {"type": "boolean", "name": "PavedDrive_P",
+    "required": true}, {"type": "boolean", "name": "PavedDrive_Y", "required": true},
+    {"type": "boolean", "name": "PoolQC_Ex", "required": true}, {"type": "boolean",
+    "name": "PoolQC_Fa", "required": true}, {"type": "boolean", "name": "PoolQC_Gd",
+    "required": true}, {"type": "boolean", "name": "PoolQC_None", "required": true},
+    {"type": "boolean", "name": "Fence_GdPrv", "required": true}, {"type": "boolean",
+    "name": "Fence_GdWo", "required": true}, {"type": "boolean", "name": "Fence_MnPrv",
+    "required": true}, {"type": "boolean", "name": "Fence_MnWw", "required": true},
+    {"type": "boolean", "name": "Fence_None", "required": true}, {"type": "boolean",
+    "name": "MiscFeature_Gar2", "required": true}, {"type": "boolean", "name": "MiscFeature_None",
+    "required": true}, {"type": "boolean", "name": "MiscFeature_Othr", "required":
+    true}, {"type": "boolean", "name": "MiscFeature_Shed", "required": true}, {"type":
+    "boolean", "name": "MiscFeature_TenC", "required": true}, {"type": "boolean",
+    "name": "SaleType_COD", "required": true}, {"type": "boolean", "name": "SaleType_CWD",
+    "required": true}, {"type": "boolean", "name": "SaleType_Con", "required": true},
+    {"type": "boolean", "name": "SaleType_ConLD", "required": true}, {"type": "boolean",
+    "name": "SaleType_ConLI", "required": true}, {"type": "boolean", "name": "SaleType_ConLw",
+    "required": true}, {"type": "boolean", "name": "SaleType_New", "required": true},
+    {"type": "boolean", "name": "SaleType_Oth", "required": true}, {"type": "boolean",
+    "name": "SaleType_WD", "required": true}, {"type": "boolean", "name": "SaleCondition_Abnorml",
+    "required": true}, {"type": "boolean", "name": "SaleCondition_AdjLand", "required":
+    true}, {"type": "boolean", "name": "SaleCondition_Alloca", "required": true},
+    {"type": "boolean", "name": "SaleCondition_Family", "required": true}, {"type":
+    "boolean", "name": "SaleCondition_Normal", "required": true}, {"type": "boolean",
+    "name": "SaleCondition_Partial", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-04-02 18:22:06.543771'

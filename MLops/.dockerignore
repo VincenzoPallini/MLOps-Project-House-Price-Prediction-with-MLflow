@@ -1,40 +1,32 @@
-# File di Git
 .git
 .gitignore
 
-# Cache e file temporanei DVC (i file .dvc vanno copiati!)
 .dvc/cache
 .dvc/tmp
 .dvc/state
 .dvc/lock
 
-# Dati (gestiti da DVC esternamente al container in questo setup)
 data/raw/
 data/processed/
 dvc-storage/ # La nostra cartella "remota" locale
 
-# Tracking MLflow locale (verrà montato come volume)
 mlruns/
 
-# Notebooks e file IDE
 notebooks/
 .vscode/
 *.code-workspace
 
-# Cache e file compilati Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Ambienti virtuali locali
 env/
 venv/
 ENV/
 .env
 *.conda
 
-# File di build vari
 build/
 dist/
 *.egg-info/

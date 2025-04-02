@@ -1,14 +1,15 @@
-# src/preprocess.py (Corretto)
 import pandas as pd
 import numpy as np
 from scipy.stats import skew
 import os
 import warnings
+from prefect import task 
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
+@task #
 def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/processed"):
     """
     Applica preprocessing e feature engineering ai DataFrame raw.
@@ -17,10 +18,9 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
     target log-trasformata (y_train_log).
     """
     if df_train_raw is None or df_test_raw is None:
-        print("Errore: DataFrame di input mancanti in preprocess_data.")
-        return None, None, None
+        raise ValueError("Errore: DataFrame di input mancanti in preprocess_data.")
 
-    print("--- Esecuzione preprocess_data (Corretto) ---")
+    print("--- Esecuzione preprocess_data TASK ---") 
 
     # --- 1. Gestione Outlier (su df_train_raw) ---
     print(f"Dimensione Train raw prima rimozione outlier: {df_train_raw.shape}")
@@ -32,22 +32,19 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
     else:
         print("Nessun outlier GrLivArea/SalePrice trovato da rimuovere.")
 
-    # --- 2. Separare y_train e Trasformazione Log ---
     if 'SalePrice' not in df_train_raw.columns:
-        print("Errore: Colonna 'SalePrice' non trovata nel DataFrame di training.")
-        return None, None, None
+        raise ValueError("Errore: Colonna 'SalePrice' non trovata nel DataFrame di training.")
     y_train_log = np.log1p(df_train_raw['SalePrice'].copy())
     df_train_features = df_train_raw.drop('SalePrice', axis=1)
     print(f"Separato e trasformato y_train_log ({y_train_log.shape[0]} elementi).")
 
-    # --- 3. Combinare Feature per preprocessing coerente ---
+    # --- 3. Combinare Feature ---
     ntrain = df_train_features.shape[0]
     all_data = pd.concat((df_train_features, df_test_raw)).reset_index(drop=True) # Usa df_test_raw
     print(f"Dataset combinato (all_data - solo features) dimensioni: {all_data.shape}")
 
     # --- 4. Gestione Valori Mancanti (NaN) ---
     print("Gestione Valori Mancanti...")
-    # Feature dove NaN significa 'None'
     cols_fillna_none = [
         'PoolQC', 'MiscFeature', 'Alley', 'Fence', 'FireplaceQu', 'GarageType',
         'GarageFinish', 'GarageQual', 'GarageCond', 'BsmtQual', 'BsmtCond',
@@ -56,7 +53,7 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
     for col in cols_fillna_none:
         if col in all_data.columns: all_data[col] = all_data[col].fillna('None')
 
-    # Feature numeriche dove NaN probabilmente significa 0
+    # Feature numeriche 
     cols_fillna_zero = [
         'GarageYrBlt', 'GarageArea', 'GarageCars', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF',
         'TotalBsmtSF', 'BsmtFullBath', 'BsmtHalfBath', 'MasVnrArea'
@@ -81,15 +78,15 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
                 mode_val = all_data[col].mode()[0]
                 all_data[col] = all_data[col].fillna(mode_val)
 
-    # Verifica finale NaN
     missing_after = all_data.isnull().sum().sum()
     if missing_after == 0:
         print("Nessun valore mancante rimasto in all_data.")
     else:
-        print(f"ATTENZIONE: Rimangono {missing_after} valori mancanti!")
-        print(all_data.isnull().sum()[all_data.isnull().sum() > 0])
+        # Solleva errore se rimangono NaN inattesi
+        raise ValueError(f"ATTENZIONE: Rimangono {missing_after} valori mancanti dopo l'imputazione!")
 
-    # --- 5. Feature Engineering (con controlli corretti)---
+
+    # --- 5. Feature Engineering ---
     print("Creazione Nuove Feature...")
     # Combinazione Superfici Totali
     required_sf_cols = ['TotalBsmtSF', '1stFlrSF', '2ndFlrSF']
@@ -114,7 +111,7 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
                                all_data['BsmtFullBath'] + 0.5 * all_data['BsmtHalfBath']
     else: print(f"Warning: Mancano una o più colonne per TotalBath: {required_bath_cols}")
 
-    # Superficie totale portici
+    # Superficie totale
     required_porch_cols = ['OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch']
     if all(col in all_data.columns for col in required_porch_cols):
         all_data['TotalPorchSF'] = all_data['OpenPorchSF'] + all_data['EnclosedPorch'] + \
@@ -141,7 +138,6 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
         print("Nessuna feature numerica selezionata per la correzione della skewness.")
 
 
-    # --- 7. Conversione Tipi (MSSubClass) e Encoding ---
     print("Encoding Feature Categoriche...")
     if 'MSSubClass' in all_data.columns:
         all_data['MSSubClass'] = all_data['MSSubClass'].astype(str)
@@ -150,27 +146,25 @@ def preprocess_data(df_train_raw, df_test_raw, processed_data_dir="../data/proce
     all_data = pd.get_dummies(all_data)
     print(f"Dimensioni dataset dopo get_dummies: {all_data.shape}")
 
-    # --- 8. Separare nuovamente Train e Test ---
     if ntrain > all_data.shape[0]:
-         print(f"Errore: ntrain ({ntrain}) è maggiore delle righe in all_data ({all_data.shape[0]})")
-         return None, None, None
+         raise ValueError(f"Errore: ntrain ({ntrain}) è maggiore delle righe in all_data ({all_data.shape[0]})")
     train_features_processed = all_data[:ntrain]
     test_features_processed = all_data[ntrain:]
     print(f"Dataset separati nuovamente: Train={train_features_processed.shape}, Test={test_features_processed.shape}")
     if train_features_processed.shape[0] != len(y_train_log):
-         print(f"ATTENZIONE: Righe df_train_processed ({train_features_processed.shape[0]}) != lunghezza y_train_log ({len(y_train_log)})!")
+         raise ValueError(f"DISALLINEAMENTO: Righe df_train_processed ({train_features_processed.shape[0]}) != lunghezza y_train_log ({len(y_train_log)})!")
 
-    # --- 9. Salvataggio Dati Processati (con correzione per y_train_log) ---
     print(f"Salvataggio dati processati in {processed_data_dir}...")
     os.makedirs(processed_data_dir, exist_ok=True)
     try:
         train_features_processed.to_parquet(os.path.join(processed_data_dir, "train_features_processed.parquet"))
         test_features_processed.to_parquet(os.path.join(processed_data_dir, "test_features_processed.parquet"))
-        # Correzione: Converti Series in DataFrame prima di salvare
         pd.DataFrame(y_train_log, columns=["SalePrice_log"]).to_parquet(os.path.join(processed_data_dir, "y_train_log.parquet"))
         print("Dati processati salvati come file Parquet.")
     except Exception as e:
         print(f"Errore durante il salvataggio dei dati processati: {e}")
+        raise e
 
-    print("--- Fine preprocess_data (Corretto) ---")
+    print("--- Fine preprocess_data TASK ---")
     return train_features_processed, test_features_processed, y_train_log
+

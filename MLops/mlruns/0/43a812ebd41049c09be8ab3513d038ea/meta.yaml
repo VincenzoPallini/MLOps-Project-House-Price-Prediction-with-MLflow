@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/43a812ebd41049c09be8ab3513d038ea/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 43a812ebd41049c09be8ab3513d038ea
+run_name: bouncy-owl-760
+run_uuid: 43a812ebd41049c09be8ab3513d038ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743612431934
+status: 1
+tags: []
+user_id: Epdragon

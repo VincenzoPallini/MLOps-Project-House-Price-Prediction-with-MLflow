@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/de71f0028beb47578b6dd3c0e95a64e4/artifacts
+end_time: 1743617866134
+entry_point_name: ''
+experiment_id: '233105214559272300'
+lifecycle_stage: active
+run_id: de71f0028beb47578b6dd3c0e95a64e4
+run_name: amazing-ant-957
+run_uuid: de71f0028beb47578b6dd3c0e95a64e4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743617866077
+status: 4
+tags: []
+user_id: Epdragon

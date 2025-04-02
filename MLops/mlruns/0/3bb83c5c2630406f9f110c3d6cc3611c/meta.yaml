@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/3bb83c5c2630406f9f110c3d6cc3611c/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3bb83c5c2630406f9f110c3d6cc3611c
+run_name: legendary-lark-970
+run_uuid: 3bb83c5c2630406f9f110c3d6cc3611c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743611780866
+status: 1
+tags: []
+user_id: Epdragon

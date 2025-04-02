@@ -1,0 +1,15 @@
+aliases: []
+creation_timestamp: 1743621204380
+current_stage: None
+description: 'Modello Ridge (alpha=1.0, scaler=robust) addestrato nella run 9e1f43a486bf4d39850b2682016b425b.
+  Validation RMSE: 0.12002'
+last_updated_timestamp: 1743621204417
+name: HousePricePredictor
+run_id: 9e1f43a486bf4d39850b2682016b425b
+run_link: null
+source: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/9e1f43a486bf4d39850b2682016b425b/artifacts/ridge-model-pipeline
+status: READY
+status_message: null
+storage_location: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/9e1f43a486bf4d39850b2682016b425b/artifacts/ridge-model-pipeline
+user_id: null
+version: 3

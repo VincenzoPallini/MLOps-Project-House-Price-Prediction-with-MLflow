@@ -1,11 +1,10 @@
-# src/predict.py
 import argparse
 import pandas as pd
 import numpy as np
 import mlflow
 import os
 import warnings
-import sys # Aggiunto per sys.exit
+import sys 
 
 warnings.filterwarnings("ignore")
 
@@ -17,7 +16,7 @@ def calculate_stats(data_series, prefix):
         f"{prefix}_min": data_series.min(),
         f"{prefix}_max": data_series.max(),
         f"{prefix}_p25": data_series.quantile(0.25),
-        f"{prefix}_p50": data_series.median(), # Mediana
+        f"{prefix}_p50": data_series.median(), 
         f"{prefix}_p75": data_series.quantile(0.75),
         f"{prefix}_count": len(data_series)
     }
@@ -30,7 +29,7 @@ def predict_and_log(model_uri, input_data_path, experiment_name="Prediction_Logs
     """
     print(f"--- Avvio Predizione e Logging ---")
     print(f"Modello URI: {model_uri}")
-    print(f"Dati Input (processati): {input_data_path}") # Ora userà il percorso corretto passato da args
+    print(f"Dati Input (processati): {input_data_path}") 
 
     # --- 1. Caricamento Modello ---
     try:
@@ -41,13 +40,12 @@ def predict_and_log(model_uri, input_data_path, experiment_name="Prediction_Logs
         return
 
     # --- 2. Caricamento Dati Input (Processati) ---
-    # Verifica preliminare del percorso (opzionale ma aiuta nel debug)
+
     if not os.path.exists(input_data_path):
         print(f"Errore: File dati input non trovato: {input_data_path}")
         print("Assicurati di aver eseguito prima il preprocessing (es. python MLOps/src/preprocess.py) per generarlo.")
-        # Considera se uscire o restituire errore
-        # sys.exit(1) # Rimuoviamo return e usiamo sys.exit per coerenza con la modifica sotto
-        return # Manteniamo return per ora per non cambiare troppo la logica originale
+
+        return 
     try:
         input_data = pd.read_parquet(input_data_path)
         print(f"Dati di input caricati: {input_data.shape}")
@@ -60,7 +58,6 @@ def predict_and_log(model_uri, input_data_path, experiment_name="Prediction_Logs
         print("Esecuzione predizioni...")
         y_pred_log = model.predict(input_data)
         y_pred_log_series = pd.Series(y_pred_log, name="predictions_log")
-        # Riconverti alla scala originale
         y_pred_orig_series = pd.Series(np.expm1(y_pred_log), name="predictions_original")
         print(f"Predizioni generate per {len(y_pred_log_series)} campioni.")
     except Exception as e:
@@ -72,45 +69,38 @@ def predict_and_log(model_uri, input_data_path, experiment_name="Prediction_Logs
     pred_log_stats = calculate_stats(y_pred_log_series, "pred_log")
     pred_orig_stats = calculate_stats(y_pred_orig_series, "pred_orig")
 
-    # --- 5. Logging su MLflow ---
+    # --- 5. Logging MLflow ---
     try:
         mlflow.set_experiment(experiment_name)
         with mlflow.start_run() as run:
             print(f"Avviata run MLflow per logging predizioni: Run ID {run.info.run_id}")
-            # Logga parametri relativi a questa predizione
             mlflow.log_param("model_uri_used", model_uri)
-            mlflow.log_param("input_data_path", input_data_path) # Logga il percorso effettivo usato
+            mlflow.log_param("input_data_path", input_data_path) 
             mlflow.log_param("num_predictions", len(y_pred_log_series))
 
-            # Logga le statistiche calcolate come metriche
             print("Logging statistiche predizioni su MLflow...")
             mlflow.log_metrics(pred_log_stats)
             mlflow.log_metrics(pred_orig_stats)
 
-            # (Opzionale) Logga un campione delle predizioni o un istogramma
-            # ...
+
 
             print("Logging completato.")
     except Exception as e:
         print(f"Errore durante il logging MLflow: {e}")
-        # Decidi se l'errore di logging deve interrompere lo script
 
     print(f"--- Fine Predizione e Logging ---")
 
 if __name__ == "__main__":
-    # --- Calcolo Percorso Dati di Default Corretto --- # <-- MODIFICA: Aggiunto blocco
     try:
         SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
         MLOPS_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
         DEFAULT_INPUT_PATH = os.path.join(MLOPS_DIR, "data", "processed", "test_features_processed.parquet")
         print(f"Percorso di default calcolato per i dati di input: {DEFAULT_INPUT_PATH}")
     except NameError:
-        # __file__ non è definito se eseguito interattivamente in alcune modalità
-        # In questo caso, ci affidiamo al fatto che l'utente specifichi --input-data
-        # o che il percorso relativo di default funzioni dalla CWD corrente.
+
         print("Attenzione: Impossibile determinare dinamicamente il percorso dello script.")
         print("Il percorso di default per --input-data potrebbe non essere corretto se non specificato.")
-        DEFAULT_INPUT_PATH = "data/processed/test_features_processed.parquet" # Fallback al vecchio default
+        DEFAULT_INPUT_PATH = "data/processed/test_features_processed.parquet" 
 
 
     # --- Definizione Argomenti ---
@@ -121,7 +111,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--input-data", type=str,
-        default=DEFAULT_INPUT_PATH, # <-- MODIFICA: Usa il default calcolato
+        default=DEFAULT_INPUT_PATH, 
         help=f"Percorso al file Parquet con i dati di test processati (default: {DEFAULT_INPUT_PATH})"
     )
     parser.add_argument(
@@ -130,9 +120,8 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    # Esegui la funzione principale
     predict_and_log(
         model_uri=args.model_uri,
-        input_data_path=args.input_data, # Passa il valore effettivo (da linea di comando o default)
+        input_data_path=args.input_data, 
         experiment_name=args.experiment_name
     )

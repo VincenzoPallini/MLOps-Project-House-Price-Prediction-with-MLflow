@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/4dca206b9e994cb6aa70c3a7dcbd4d9c/artifacts
+end_time: 1743617928721
+entry_point_name: ''
+experiment_id: '233105214559272300'
+lifecycle_stage: active
+run_id: 4dca206b9e994cb6aa70c3a7dcbd4d9c
+run_name: respected-kit-45
+run_uuid: 4dca206b9e994cb6aa70c3a7dcbd4d9c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743617928643
+status: 4
+tags: []
+user_id: Epdragon

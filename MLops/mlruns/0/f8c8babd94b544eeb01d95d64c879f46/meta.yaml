@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Desktop/MLops/mlruns/0/f8c8babd94b544eeb01d95d64c879f46/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f8c8babd94b544eeb01d95d64c879f46
+run_name: enchanting-skunk-544
+run_uuid: f8c8babd94b544eeb01d95d64c879f46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743612253634
+status: 1
+tags: []
+user_id: Epdragon

@@ -1,7 +1,5 @@
 # conf/model/ridge.yaml
-# Parametri specifici per il modello Ridge
-name: ridge       # Identificativo del tipo di modello
-alpha: 1.0        # Valore di default per alpha
-scaler: robust    # Tipo di scaler da usare (potrebbe essere 'standard', ecc.)
-# Aggiungere qui altri parametri sklearn se necessario, es:
-# solver: 'auto'
+
+name: ridge       
+alpha: 1.0        
+scaler: robust    

@@ -1,7 +1,7 @@
-# MLproject (Hydra version)
 name: HousePricesPredictionMLOps
-environment: conda.yaml
+environment: conda.yaml 
+
 
 entry_points:
   main:
-    command: "python src/train.py"
+    command: "python run_pipeline.py" 

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/palli/OneDrive/Documenti/GitHub/MLOps-Project-House-Price-Prediction-with-MLflow/MLOps/mlruns/233105214559272300/9e1f43a486bf4d39850b2682016b425b/artifacts
+end_time: 1743621204551
+entry_point_name: ''
+experiment_id: '233105214559272300'
+lifecycle_stage: active
+run_id: 9e1f43a486bf4d39850b2682016b425b
+run_name: funny-horse-112
+run_uuid: 9e1f43a486bf4d39850b2682016b425b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743621192698
+status: 3
+tags: []
+user_id: Epdragon

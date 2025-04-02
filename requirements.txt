@@ -7,3 +7,6 @@ dvc
 pyarrow 
 hydra-core
 flatten-dict
+prefect o
+pytest
+flake8 
